@@ -590,7 +590,7 @@
 
 	coinjs.isBitcoinCash = function() {
 		var host = $("#coinjs_broadcast option:selected").val();
-		return (host == 'blockexplorer.com_bitcoincash')
+		return (host == 'api.bitcore.io_bitcoincash')
 	}
 
 	/* start of hd functions, thanks bip32.org */
@@ -1388,7 +1388,7 @@
 						type: "GET",
 						cache: false,
 						async: false,
-						url: "https://bitcoincash.blockexplorer.com/api/addr/"+utxo_address+"/utxo",
+						url: "https://api.bitcore.io/api/BCH/mainnet/address/"+utxo_address+"/?unspent=true",
 						dataType: "json",
 						error: function(data) {
 							alert('Couldn\'t get values for inputs. Bitcoin Cash will not sign correctly.');
